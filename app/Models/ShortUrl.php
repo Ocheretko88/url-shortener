@@ -9,11 +9,11 @@ class ShortUrl extends Model
 {
     use HasFactory;
 
+// which fields a site visitor can fill in
     protected $fillable = [
         'url',
         'short_key',
         'custom_short_key',
-        'user_id',
         'expired_at',
     ];
 
