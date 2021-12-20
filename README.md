@@ -1,6 +1,6 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/89727507/146746215-d3566c91-565d-412b-b944-2d35b038a592.png" width="200"></a></p>
 
-
+#Simple URL Shortener
 
 ## About Laravel
 
