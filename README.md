@@ -6,12 +6,17 @@
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- Go to the folder application using ```cd``` command on your cmd or terminal.
-- Run `composer install` on your cmd or terminal.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
+- Clone this repository via GitHub Desktop or copy this command and paste it in your terminal or cmd: `git clone git@github.com:Ocheretko88/url-shortener.git`.
+- Go to the folder application using `cd url-shortener` command.
+- Run `composer install`.
+- Run `npm install`.
+- Copy `.env.example` file to `.env` on the root folder. For example, you can use `cp .env.example .env` command if you're using Linux or macOS.
+- Open your `.env` file and change the database name `DB_DATABASE` to whatever you have, username `DB_USERNAME` and password `DB_PASSWORD`.
+- Run `php artisan key:generate`.
+- Run php `artisan migrate`.
+- Run `php artisan serve` or `./vendor/bin/sail/ up` if you're using Docker.
+- Go to `localhost` and enjoy.
+.
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
