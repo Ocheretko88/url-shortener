@@ -3,10 +3,7 @@
 <head>
     <title>Url Shortener</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/main.css" />
 
@@ -48,7 +45,7 @@ $(document).ready(function (){
                 <div class="input-group mb-3 ">
                     <input type="text" name="url" class="form-control" placeholder="Enter URL" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-success" type="submit">Create Short Url</button>
+                        <button class="btn btn-secondary" type="submit">Create Short Url</button>
                     </div>
                 </div>
 
@@ -70,7 +67,7 @@ $(document).ready(function (){
         <div class="card-body">
 
             @if (Session::has('success'))
-                <div class="alert alert-success">
+                <div class="alert alert-success bg-light mb-3">
                     <p>{{ Session::get('success') }}</p>
                 </div>
             @endif
@@ -94,12 +91,15 @@ $(document).ready(function (){
                                 <td><a href="{{ route('shorten.url', $row->short_key) }}" target="_blank">{{ route('shorten.url', $row->short_key) }}</a></td>
                                 <td><a href="{{ route('shorten.url', $row->custom_short_key) }}" target="_blank">{{ route('shorten.url', $row->custom_short_key) }}</a></td>
                                 <td>{{ $row->url }}</td>
-                                <td>@if($row->is_enabled) <div style="color: green;">Active</div> @else <div style="color: red;">Expired</div> @endif</td>
+                                <td>@if(time() <= $row->expired_at) <div style="color: green;">Active</div> @else <div style="color: red;">Expired</div> @endif</td>
                                 <td>{{ $row->clicks }}</td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="d-flex justify-content-center">
+                        {!! $shortUrls->links('vendor.pagination.bootstrap-4') !!}
+                    </div>
                 </div>
         </div>
     </div>

@@ -20,6 +20,7 @@ class CreateShortUrlsTable extends Migration
              $table->string('short_key')->unique()->nullable();
              $table->string('custom_short_key')->unique()->nullable();
              $table->boolean('is_enabled')->default(true);
+             $table->integer('expired_at');
              $table->integer('clicks')->default(0);
              $table->timestamps();
         });
@@ -35,3 +36,4 @@ class CreateShortUrlsTable extends Migration
         Schema::dropIfExists('short_urls');
     }
 }
+

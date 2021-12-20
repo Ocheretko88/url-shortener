@@ -15,16 +15,16 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(function () {
-        $shortUrlMaxLifeTime = env("SHORT_URL_MAX_LIFE_TIME");
+   //     $schedule->call(function () {
+     //   $shortUrlMaxLifeTime = env("SHORT_URL_MAX_LIFE_TIME");
+//
+  //      $currentTime = time();
+    //    $expiredTime = $currentTime+$shortUrlMaxLifeTime;
 
-        $currentTime = time();
-        $expiredTime = $currentTime+$shortUrlMaxLifeTime;
+      //              $tmp = DB::table('short_urls')->select("created_at")->where($expiredTime, ">=", "created_at")->get();
+        //            dd($tmp);
 
-                    $tmp = DB::table('short_urls')->select("created_at")->where($expiredTime, ">=", "created_at")->get();
-                    dd($tmp);
-
-                })->daily();
+          //      })->daily();
     }
 
     /**

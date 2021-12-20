@@ -13,7 +13,8 @@ class ShortUrl extends Model
         'url',
         'short_key',
         'custom_short_key',
-        'user_id'
+        'user_id',
+        'expired_at',
     ];
 
     public static function generateRandomString($length = 10): string
@@ -33,3 +34,4 @@ class ShortUrl extends Model
         return $this->belongsTo(User::class);
     }
 }
+
