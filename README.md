@@ -11,7 +11,7 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - Run `composer install`.
 - Run `npm install`.
 - Copy `.env.example` file to `.env` on the root folder. For example, you can use `cp .env.example .env` command.
-- Open your `.env` file and change the database name `DB_DATABASE` to whatever you have, username `DB_USERNAME` and password `DB_PASSWORD`.
+- Open your `.env` file and change the database name `DB_DATABASE`, username `DB_USERNAME` and password `DB_PASSWORD`.
 - Run `php artisan key:generate`.
 - Run php `artisan migrate`.
 - Run `php artisan serve` or `./vendor/bin/sail/ up` if you're using Docker.
