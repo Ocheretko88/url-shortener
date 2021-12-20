@@ -1,4 +1,4 @@
-<p align="center"><img src="https://user-images.githubusercontent.com/89727507/146745962-1d57056c-fd9f-4d5a-9e5a-b918c21a0372.png" width="200"></a></p>
+<p align="center"><img src="https://github.com/Ocheretko88/url-shortener/issues/1#issuecomment-997758147" width="200"></a></p>
 
 
 
