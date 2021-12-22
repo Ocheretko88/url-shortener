@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Storage;
 
 class ShortUrlController extends Controller
 {
-    // showing us the form and the table with urls
+
+
     public function index()
         {
 
@@ -23,7 +24,7 @@ class ShortUrlController extends Controller
          *
          * @return \Illuminate\Http\Response
          */
-         // saving input values into the db
+
         public function store(Request $request)
         {
             $request->validate([
@@ -45,8 +46,7 @@ class ShortUrlController extends Controller
             $input['custom_short_key'] = $request->custom_short_key;
 
             $blackListFile = Storage::disk('local')->get('public/blacklist.txt');
-            $blackListFileArray = explode("\n", $blackListFile); // we turn the content of a txt file into an array
-
+            $blackListFileArray = explode("\n", $blackListFile);
             if ($customShortKey && in_array($customShortKey, $blackListFileArray))
             {
             return redirect('short-link')->with('success', "Sorry, you're trying to use a bad word. Try another one." );

@@ -29,7 +29,7 @@ class GitHubController extends Controller
 
                 Auth::login($searchUser);
 
-                return redirect('/dashboard');
+                return redirect('/short-link');
 
             }else{
                 $gitUser = User::create([
@@ -42,7 +42,7 @@ class GitHubController extends Controller
 
                 Auth::login($gitUser);
 
-                return redirect('/dashboard');
+                return redirect('/short-link');
             }
 
         } catch (Exception $e) {
