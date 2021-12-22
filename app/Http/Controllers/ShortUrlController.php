@@ -30,9 +30,8 @@ class ShortUrlController extends Controller
             $request->validate([
                'url' => 'required|url'
             ]);
-            // we get a long url
+
             $input['url'] = $request->url;
-           // we get a custom short key
             $customShortKey = $request->custom_short_key;
 
             // if $customShortKey !isset, we generate a random short key with the function from the model
@@ -45,12 +44,19 @@ class ShortUrlController extends Controller
             $input['short_key'] = $randomShortKey;
             $input['custom_short_key'] = $request->custom_short_key;
 
-            $blackListFile = Storage::disk('local')->get('public/blacklist.txt');
-            $blackListFileArray = explode("\n", $blackListFile);
-            if ($customShortKey && in_array($customShortKey, $blackListFileArray))
+            $blackListFileArray = config("blacklist");
+
+
+            if ($customShortKey)
             {
+
+                foreach($blackListFileArray as $word){
+                if(preg_match("/$word/", $customShortKey)){
             return redirect('short-link')->with('success', "Sorry, you're trying to use a bad word. Try another one." );
             }
+            }
+            }
+
             $input['expired_at'] = time()+env('SHORT_URL_MAX_LIFE_TIME');
             ShortUrl::create($input);
 

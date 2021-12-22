@@ -21,7 +21,7 @@
 
     <style>
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family: sans-serif;
         }
     </style>
 </head>
@@ -47,7 +47,7 @@ $(document).ready(function (){
 </script>
 
 
-<body>
+
 <body class="antialiased">
 <div class="relative flex items-top justify-right min-h-screen bg-white-100 dark:bg-white sm:items-center py-4 sm:pt-0">
     @if (Route::has('login'))
@@ -136,6 +136,6 @@ $(document).ready(function (){
     </div>
 
 </div>
-
+</div>
 </body>
 </html>

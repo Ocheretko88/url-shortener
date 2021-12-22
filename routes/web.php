@@ -28,7 +28,7 @@ require __DIR__.'/auth.php';
 Route::get('auth/github', [GitHubController::class, 'gitRedirect']);
 Route::get('auth/github/callback', [GitHubController::class, 'gitCallback']);
 
-Route::get('short-link', [ShortUrlController::class, 'index']);
+Route::get('short-link', [ShortUrlController::class, 'index'])->name('shortener');
 Route::post('short-link', [ShortUrlController::class, 'store'])->name('create.short.url');
 
 Route::get('{code?}', [ShortUrlController::class, 'shortenUrl'])->name('shorten.url');
